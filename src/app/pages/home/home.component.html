@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+        <h2>Bienvenido a la página principal</h2>
+        <p>Nombre: {{nombre}}</p>
+        <p>Nombre completo: {{nombre + ' ' + apellido}}</p>
+        <p>Nombre (misma propiedad en mayusculas): {{nombre | uppercase}}</p>
+        <p>Nota: {{nota}}</p>
+        <p>Nota + 100: {{nota + 100}}</p>
+    <p></p>
+    <!-- Input para cambiar el valor de la propiedad nombre: -->
+    <input type="texto" class="form-control" placeholder="Escribre tu nombre" [(ngModel)]="nombre" />
+    
+    <!-- Boton para llamar el metodo de cambiar valores -->
+    <button type="button" class="btn btn-primary" (click)="cambiarValores()">Cambiar valores</button>
+
+    <br /><br />
+    <!-- Ejemplos de condicionales ngIf -->
+    <p *ngIf="encendido">La propiedad encendido es true</p>
+    <p *ngIf="!encendido">La propiedad encendido es false</p>
+    <p *ngIf="10 > 5">Es verdadera</p>
+
+    <br /><br />
+    <!--Ejemplo de ciclo ngFor-->
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let persona of personas">{{ persona }}</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th colspan="2">
+                <h1>Bienvenido, comunicate con nosotros 📞</h1>
+            </th>
+        </tr>
+        <tr>
+            <td class="td-style" colspan="2" style="text-align: center;">
+                <img src="https://cursos.com/wp-content/uploads/2020/12/estudiar-secretaria.jpg" alt="404Eror">
+            </td>
+        </tr>
+        <tr>
+            <td class="td-font" colspan="2">
+                <p>Ingresa tus datos en el siguiente formulario</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="td-font">
+                <label>Nombre completo: </label>
+            </td>
+            <td>
+                <input type="texto" class="form-control" placeholder="Escribre tu nombre completo" [(ngModel)]="nombreUser" />
+            </td>
+        </tr>
+        <tr>
+            <td class="td-font">
+                <label>Edad: </label>
+            </td>
+            <td>
+                <input type="text" class="form-control" placeholder="Ingresa tu edad en años" [(ngModel)]="edad" />
+            </td>
+        </tr>
+        <tr>
+            <td class="td-font">
+                <label>Correo: </label>
+            </td>
+            <td>
+                <input type="texto" class="form-control" placeholder="Escribre tu email (ejemplo: user@gmail.com)" [(ngModel)]="correoUser" />
+            </td>
+        </tr>
+        <tr>
+            <td class="td-font">
+                <button type="button" class="btn btn-primary col-6" (click)="mensaje()">Aceptar</button>
+            </td>
+            <td class="td-font">
+                <button type="button" class="btn btn-danger col-6" (click)="borrar()">Borrar información</button>
+            </td>
+        </tr>
+    </table>
+
+
+    <br /><br />
+    <div *ngIf="bandera == true">
+        <h1 style="color: black;">¡Información enviada!</h1>
+        <h6>Querido Sr(a). {{nombreUser}}, hemos recibido su mensaje, nosotros nos comunicaremos al correo electronico propocionado 
+            por usted ( email: {{correoUser}} ), si necesita de alguna información más detallada, puede comunicarse con el encargado
+            del departamento en TI. "{{nombreAdmin}}", al igual puede mandar un correo a la siguiente dirección {{correoAdmin}} o si lo decea
+            marcar al número tel. {{telAdmin}}.
+        </h6>
+    </div>
+    
+</body>
+</html>
